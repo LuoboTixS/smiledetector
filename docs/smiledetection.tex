@@ -1,0 +1,72 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{stmaryrd}
+\usepackage{xspace}
+\usetikzlibrary{positioning}
+
+\author{Omar Mohamed Ali Mudhir - 808016}
+\title{Smile Detector System using OpenCV\\\small{Progetto di Sistemi Intelligenti 2011/2012}}
+
+\lstset{
+	basicstyle=\small,
+	keywordstyle=\color{black}\bfseries\underbar,
+	identifierstyle=,
+	commentstyle=\color{white}, 
+	stringstyle=\ttfamily, 
+	showstringspaces=false,
+	tabsize=3,
+	frame=tb,
+	numbers=left
+}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Introduzione}
+Questo progetto ha come finalità la realizzazione di un sistema automatico di visione in grado di analizzare un flusso di immagini da una webcam e di rilevare i volti determinando se siano sorridenti oppure tristi. Il progetto si sviluppa in due tre parti principalmente: training, face detection, smile detection.
+
+Durante la fase di training sarà necessario prelevare un campione di immagini per lo stato del volto sorridente ed uno per quello triste, dopodiché verranno proiettati in uno spazio delle features utilizzando la tecnica del Principal Component Analisys (PCA). La seconda fase è quella di face detection in cui bisogna trovare il volto da analizzare all'interno della nuova immagine acquisita, poiché da quella si cercherà di analizzare lo stato d'animo del soggetto. Il rilevamento del volto è portato a termine grazie all'algoritmo di Viola-Jones\cite{conf/iccv/ViolaJ01}, in grado di effettuare una più che buona ricerca dei volti ad una velocità fino a 15 frame al secondo. Infine l'ultima fase è quella di ritagliare la sezione della bocca e attraverso la PCA proiettarla nello spazione delle features nel quale saremo in grado di confrontarlo con i campioni del training set.
+
+\section{Rilevamento dei volti}
+In questi ultimi anni il problema del rilevamento dei volti è diventato molto importante grazie anche al potenziamento dei sistemi di calcolo che risultano ora molto ridotti. In ambienti pubblici nei quali la sicurezza ha un importanza rilevante è necessario dotarsi di mezzi automatici che aiutino gli addetti alla sicurezza a filtrare la grande mole di immagini che arrivano da tutte le telecamere. Ed è poprio in queste situazioni che avere a disposizione sistemi in grado di rilevare volti possono aiutare a concentrarsi sulle immagini di maggior interesse.
+
+Un altro campo in cui la tecnologia del rilevamento dei volti si è sviluppata è quella della fotografia, infatti molte fotocamere digitali hanno oggi incorporato un sistema che rileva le facce nelle immagini digitali inviate dal sensore ottico. In questo modo si aiuta l'utente a mantenere il focus dell'immagine sui volti in modo da averli sempre nitidi e non sfocati a causa di una carenza di manualità delle funzioni della macchina (infatti l'utente non esperto deve avere il miglior risultato con un unico bottone). Oltre al rilevamento dei volti si sta andando nella direzione in cui è proprio il tempo di scatto della foto dipende dall'immagine, infatti alcune macchine permettono di scattare solamente quando i volti riconosciuti stanno sorridendo.
+
+\section{Face Detection}
+Il rilevamento del volto è la parte primaria del programma poiché se non fatta accuratamente non è possibile rilevare in alcun modo l'espressione del soggetto. Per questo motivo è stato adottato l'algoritmo di Viola-Jones\cite{conf/iccv/ViolaJ01}. Questo algoritmo utilizza la nozione di integral image, che non è altro che una matrice di di pari dimensione all'immagine originale in cui i valori dei pixel sono dati dalla sommatoria dei pixel delle righe e colonne precedenti. Questo accorgimento è importante perché l'algoritmo prevede di calcolare la somma di rettangoli di pixel e di compararli tra loro in modo da rilevare dei pattern. Avere una matrice di sommatorie precalcolate permette di eseguire tale operazione in in tempo costante, cioè O(1)\cite{Jensen:Thesis:2008}.
+
+L'algoritmo in fase di rilevamento prevede l'analisi di finestre, cioè sottoimmagini rettangolari dell'immagine da analizzare, di diversa dimensione e in tutte le possibili posizioni. Per ogni finestra vengono testati i pattern composti da diversi rettangoli bianchi e neri che indicano le zone di chiaro e le zone di scuro. Questo rapporto tra il chiaro e lo scuro è deducibile dalla somma dei pixel nei diversi rettangoli, che dovranno quindi contenere un valore inferiore nelle zone scure e vice versa. Se è pattern è verificato si passa a quello successivo in modo da ottenere un analisi a cascata, che permette di scartare a priori finestre non promettenti.
+
+La selezione dei pattern è effettuata nella fase di training, ma fortunatamente sono già inclusi in OpenCV per la rilevazione del volto frontale. In ogni caso sono presenti anche dei tool aggiuntivi per efettuare il training di forme anche differenti dai volti, infatti questo algoritmo funziona bene per il riconoscimenti di oggetti in generale.
+
+\section{Principal Component Analisys}
+La PCA è una tecnica che permette di scomporre un vettore di dati in modo da ridurre il numero di componenti in esso presenti e di mantenere solamente quelle più rilevanti. Questo metodo è usato come metodo di face recognition\cite{turk.pentl-1991:eigenfor:journal:71}, cioè la classificazione dei volti atta a riconoscere volti simili. Questa tecnica è stata utilizzata in questo progetto non per riconoscere volti ma per classificare la forma della bocca e quindi lo stato d'animo del soggetto.
+
+La PCA si avvale di un training set per calcolare una matrice U (matrice degli eigenobjects) derivata dagli autovettori della matrice di covarianza ottenuta dalle immagini del training set. La matrice U viene poi utilizzata per proiettare i nuovi vettori-immagine nello spazio delle features in modo da poter confrontare solamente le feature più rilevanti dell'immagine. La classificazione è effettuata grazie alla distanza minima tra i due vettori utilizzando la distanza euclidea\cite{Smith2002,Shlens05atutorial}.
+
+\section{Smile Detection}
+Il programma è pronto per mettere insieme tutti i mattoncini. Dopo aver effettuato l'operazione di face detection viene scelta la faccia con il rettangolo più grande e da esso viene ricavato il rettangolo contenente la bocca. Questa viene proiettata nello spazio delle features moltiplicando il vettore immagine per la matrice U e computando la distanza euclidea con il trainint set. Il vettore con distanza minima è quindi associato allo stato del soggetto, che può essere "happy" oppure "sad". I dettagli implementativi sono commentati direttamente nel codice passo per passo.
+
+\section{Utilizzo del programma}
+Dopo l'esecuzione il programma rileva la webcam, e se non ne viene trovata nessuna termina. Dopo l'esecuzione del training e il caricamento del classificatore per il volto frontale inizia la fase di face detection. Appaiono tre finestre del programma: una per la webcam che contrassegna con un rettangolo rosso il volto trovato, l'altro mostra il rettangolo della bocca estratta dal volto e con istogramma equalizzato, infine un logo con una faccina sorridente o triste per rappresentante lo stato d'animo del soggetto.
+
+Premendo il tasto ESC il programma termina in qualsiasi momento. Premento i pulsanti H e S vengono scattate le foto della bocca in modo da essere utilizzate come training set all'avvio successivo. Il pulsante S salva la foto per lo stato "sad", mentre H sta per "happy".
+
+
+
+\bibliographystyle{plain}
+\bibliography{smiledetection}
+
+
+\end{document}

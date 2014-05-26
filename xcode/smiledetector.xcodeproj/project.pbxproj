@@ -1,0 +1,267 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E6ED7B15EB829300F2737A /* libopencv_objdetect.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7315EB829300F2737A /* libopencv_objdetect.2.4.2.dylib */; };
+		07E6ED7C15EB829300F2737A /* libopencv_contrib.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7415EB829300F2737A /* libopencv_contrib.2.4.2.dylib */; };
+		07E6ED7D15EB829300F2737A /* libopencv_features2d.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7515EB829300F2737A /* libopencv_features2d.2.4.2.dylib */; };
+		07E6ED7E15EB829300F2737A /* libopencv_legacy.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7615EB829300F2737A /* libopencv_legacy.2.4.2.dylib */; };
+		07E6ED7F15EB829300F2737A /* libopencv_photo.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7715EB829300F2737A /* libopencv_photo.2.4.2.dylib */; };
+		07E6ED8015EB829300F2737A /* libopencv_imgproc.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7815EB829300F2737A /* libopencv_imgproc.2.4.2.dylib */; };
+		07E6ED8115EB829300F2737A /* libopencv_core.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7915EB829300F2737A /* libopencv_core.2.4.2.dylib */; };
+		07E6ED8215EB829300F2737A /* libopencv_highgui.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E6ED7A15EB829300F2737A /* libopencv_highgui.2.4.2.dylib */; };
+		07E6ED8515EB83A500F2737A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07E6ED8415EB83A500F2737A /* main.cpp */; };
+		07E6ED9515EBB8F300F2737A /* data in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07E6ED8615EBB4AC00F2737A /* data */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07E6ED9415EBB8AF00F2737A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				07E6ED9515EBB8F300F2737A /* data in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07DEDD6815EB81CD00E1DCF6 /* smiledetector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = smiledetector; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E6ED7315EB829300F2737A /* libopencv_objdetect.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_objdetect.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_objdetect.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED7415EB829300F2737A /* libopencv_contrib.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_contrib.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_contrib.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED7515EB829300F2737A /* libopencv_features2d.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_features2d.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED7615EB829300F2737A /* libopencv_legacy.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_legacy.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_legacy.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED7715EB829300F2737A /* libopencv_photo.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_photo.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_photo.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED7815EB829300F2737A /* libopencv_imgproc.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_imgproc.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED7915EB829300F2737A /* libopencv_core.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_core.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED7A15EB829300F2737A /* libopencv_highgui.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.4.2.dylib; path = ../../../../../../opt/local/lib/libopencv_highgui.2.4.2.dylib; sourceTree = "<group>"; };
+		07E6ED8415EB83A500F2737A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../src/main.cpp; sourceTree = SOURCE_ROOT; };
+		07E6ED8615EBB4AC00F2737A /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07DEDD6515EB81CD00E1DCF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07E6ED7B15EB829300F2737A /* libopencv_objdetect.2.4.2.dylib in Frameworks */,
+				07E6ED7C15EB829300F2737A /* libopencv_contrib.2.4.2.dylib in Frameworks */,
+				07E6ED7D15EB829300F2737A /* libopencv_features2d.2.4.2.dylib in Frameworks */,
+				07E6ED7E15EB829300F2737A /* libopencv_legacy.2.4.2.dylib in Frameworks */,
+				07E6ED7F15EB829300F2737A /* libopencv_photo.2.4.2.dylib in Frameworks */,
+				07E6ED8015EB829300F2737A /* libopencv_imgproc.2.4.2.dylib in Frameworks */,
+				07E6ED8115EB829300F2737A /* libopencv_core.2.4.2.dylib in Frameworks */,
+				07E6ED8215EB829300F2737A /* libopencv_highgui.2.4.2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07DEDD5D15EB81CD00E1DCF6 = {
+			isa = PBXGroup;
+			children = (
+				07E6ED7315EB829300F2737A /* libopencv_objdetect.2.4.2.dylib */,
+				07E6ED7415EB829300F2737A /* libopencv_contrib.2.4.2.dylib */,
+				07E6ED7515EB829300F2737A /* libopencv_features2d.2.4.2.dylib */,
+				07E6ED7615EB829300F2737A /* libopencv_legacy.2.4.2.dylib */,
+				07E6ED7715EB829300F2737A /* libopencv_photo.2.4.2.dylib */,
+				07E6ED7815EB829300F2737A /* libopencv_imgproc.2.4.2.dylib */,
+				07E6ED7915EB829300F2737A /* libopencv_core.2.4.2.dylib */,
+				07E6ED7A15EB829300F2737A /* libopencv_highgui.2.4.2.dylib */,
+				07DEDD6B15EB81CD00E1DCF6 /* smiledetector */,
+				07DEDD6915EB81CD00E1DCF6 /* Products */,
+				07E6ED8615EBB4AC00F2737A /* data */,
+			);
+			sourceTree = "<group>";
+		};
+		07DEDD6915EB81CD00E1DCF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07DEDD6815EB81CD00E1DCF6 /* smiledetector */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07DEDD6B15EB81CD00E1DCF6 /* smiledetector */ = {
+			isa = PBXGroup;
+			children = (
+				07E6ED8415EB83A500F2737A /* main.cpp */,
+			);
+			path = smiledetector;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07DEDD6715EB81CD00E1DCF6 /* smiledetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DEDD7215EB81CD00E1DCF6 /* Build configuration list for PBXNativeTarget "smiledetector" */;
+			buildPhases = (
+				07DEDD6415EB81CD00E1DCF6 /* Sources */,
+				07DEDD6515EB81CD00E1DCF6 /* Frameworks */,
+				07E6ED9415EBB8AF00F2737A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = smiledetector;
+			productName = smiledetector;
+			productReference = 07DEDD6815EB81CD00E1DCF6 /* smiledetector */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07DEDD5F15EB81CD00E1DCF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 07DEDD6215EB81CD00E1DCF6 /* Build configuration list for PBXProject "smiledetector" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07DEDD5D15EB81CD00E1DCF6;
+			productRefGroup = 07DEDD6915EB81CD00E1DCF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07DEDD6715EB81CD00E1DCF6 /* smiledetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07DEDD6415EB81CD00E1DCF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07E6ED8515EB83A500F2737A /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		07DEDD7015EB81CD00E1DCF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		07DEDD7115EB81CD00E1DCF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		07DEDD7315EB81CD00E1DCF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/opt/local/include/opencv,
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/opt/local/include,
+					/opt/local/include/opencv,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/opt/local/include /opt/local/include/opencv";
+			};
+			name = Debug;
+		};
+		07DEDD7415EB81CD00E1DCF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/opt/local/include/opencv,
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/opt/local/include,
+					/opt/local/include/opencv,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/opt/local/include /opt/local/include/opencv";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07DEDD6215EB81CD00E1DCF6 /* Build configuration list for PBXProject "smiledetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DEDD7015EB81CD00E1DCF6 /* Debug */,
+				07DEDD7115EB81CD00E1DCF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DEDD7215EB81CD00E1DCF6 /* Build configuration list for PBXNativeTarget "smiledetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DEDD7315EB81CD00E1DCF6 /* Debug */,
+				07DEDD7415EB81CD00E1DCF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07DEDD5F15EB81CD00E1DCF6 /* Project object */;
+}
