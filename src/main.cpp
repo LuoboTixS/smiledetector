@@ -104,6 +104,9 @@ int main (int argc, const char * argv[])
       if(rects->total == 0)
 	{
 	  // cvShowImage("result", img);
+       	  cvShowImage("result", img);
+      	  cvMoveWindow("result", 0, 0);
+	
 	  continue;
 	}
       CvRect *roi = 0;
@@ -176,8 +179,8 @@ int main (int argc, const char * argv[])
       // cvMoveWindow("logo", 670, 200);
 
       // show results
-      // cvShowImage("face", subimg_gray);
-      // cvMoveWindow("face", 670, 0);
+       cvShowImage("face", subimg_gray);
+       cvMoveWindow("face", 670, 0);
       // cvShowImage("result", img);
       // cvMoveWindow("result", 0, 0);
       end = clock();
@@ -187,9 +190,9 @@ int main (int argc, const char * argv[])
 	
   // cleanup
   cvReleaseCapture(&capture);
-  // cvDestroyWindow("result");
+   cvDestroyWindow("result");
   // cvDestroyWindow("logo");
-  // cvDestroyWindow("face");
+   cvDestroyWindow("face");
   cvReleaseHaarClassifierCascade(&cascade);
   cvReleaseMemStorage(&storage);
 	
