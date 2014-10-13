@@ -17,12 +17,15 @@ INCDIR = $(STAGEDIR)/include -I $(STAGEDIR)/include/opencv
 
 # SRC = gumsnap.c
 SRC = src/main.cpp
+# SRC = src/sampleio.cpp
 
-# TARGET = gumsnap
+#TARGET = gumsnap
 TARGET = bin/smiledetector
+#TARGET = bin/sampleio
 
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -I $(INCDIR) -L $(LIBDIR) $(SRC) -o $(TARGET)
+	$(CXX) $(CXXFLAGS) -I $(INCDIR) -L $(LIBDIR) $(SRC) -D_DEBUG -o $(TARGET)_debug
 
 clean:
 	rm -f $(TARGET)
