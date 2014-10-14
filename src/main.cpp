@@ -112,8 +112,10 @@ int main (int argc, const char * argv[])
 		CvSeq *rects = cvHaarDetectObjects(img, cascade, storage, 1.3, 4, CV_HAAR_DO_CANNY_PRUNING, cvSize(50, 50));
 		if(rects->total == 0)
 		{
+#ifdef _DEBUG
 			cvShowImage("result", img);
 			continue;
+#endif/*  _DEBUG */
 		}
 		CvRect *roi = 0;
 		for(int i = 0; i < rects->total; i++)
@@ -209,9 +211,11 @@ int main (int argc, const char * argv[])
 	}
 	// cleanup
 	cvReleaseCapture(&capture);
+#ifdef _DEBUG
 	cvDestroyWindow("result");
 	cvDestroyWindow("logo");
 	cvDestroyWindow("face");
+#endif /* _DEBUG */
 	cvReleaseHaarClassifierCascade(&cascade);
 	cvReleaseMemStorage(&storage);
 	
